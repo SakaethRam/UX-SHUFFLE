@@ -944,10 +944,8 @@ See [`LICENSE`](./LICENSE) for the applicable license terms.
           TARGET
 ```
 
-**Clone once.**
+---
 
-**Choose what matters.**
+## License & contribution
 
-**Shuffle it into your project.**
-
-> **Your interface has been shuffled.**
+WalkMan CPP is distributed under the terms defined in `LICENSE`.
