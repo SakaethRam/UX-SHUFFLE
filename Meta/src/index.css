@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Outfit:wght@100..900&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+}
+#root{
+  min-height: 115vh;
+  display: flex;
+  animation: fadeIn 1.5s;
+}
+/*Scroll-Bar*/
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+  width: .8rem;
+}
+html::-webkit-scrollbar-track{
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+  background: #000000d6;
+  border-radius: 5rem;
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
