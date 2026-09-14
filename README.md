@@ -948,4 +948,4 @@ See [`LICENSE`](./LICENSE) for the applicable license terms.
 
 ## License & contribution
 
-WalkMan CPP is distributed under the terms defined in `LICENSE`.
+It is distributed under the terms defined in `LICENSE`.
