@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARKIN X ENGINE</title>
+    <meta name="description" content="Transform your business with context-aware transcription, translation, and voice synthesis. Enterprise-grade AI solutions with 99.9% accuracy and 50ms response time." />
+    <meta name="author" content="ARKIN X ENGINE" />
+    <meta name="keywords" content="AI transcription, voice synthesis, real-time translation, speech to text, context-aware AI" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="public/ARKIN X.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ARKIN X ENGINE" />
+    <meta property="og:description" content="Context-aware transcription, translation, and voice synthesis with enterprise-grade security and lightning-fast performance." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/ARKIN X.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ARKIN X ENGINE" />
+    <meta name="twitter:description" content="Transform communication with AI-powered transcription, translation, and voice synthesis." />
+    <meta name="twitter:image" content="/ARKIN X.png" />
+
+    <style>
+      /* Custom Cursor */
+      .custom-cursor-area {
+        cursor: none;
+      }
+      .custom-cursor-area a,
+      .custom-cursor-area button {
+        cursor: none;
+      }
+      .cursor-dot,
+      .cursor-outline {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        will-change: transform;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+      .cursor-dot {
+        height: 6px;
+        width: 6px;
+        background-color: white;
+        border-radius: 50%;
+      }
+      .cursor-outline {
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+      }
+      .cursor-outline.hover {
+        width: 48px;
+        height: 48px;
+        border-color: rgba(255, 255, 255, 1);
+        border-width: 2px;
+      }
+
+      /* Click ripple effect */
+      .cursor-outline.click {
+        transform: scale(1.6) translate(-50%, -50%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+    </style>
+  </head>
+
+  <body class="custom-cursor-area">
+    <div id="root"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      const cursorDot = document.querySelector('.cursor-dot');
+      const cursorOutline = document.querySelector('.cursor-outline');
+
+      let mouseX = 0, mouseY = 0;       // real mouse position
+      let outlineX = 0, outlineY = 0;   // outline's "lagged" position
+
+      // Track mouse movement
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        // dot moves instantly
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+      });
+
+      // Animate outline to follow with smoothing
+      function animateOutline() {
+        outlineX += (mouseX - outlineX) * 0.08; // adjust "0.15" for more/less lag
+        outlineY += (mouseY - outlineY) * 0.08;
+
+        cursorOutline.style.left = outlineX + 'px';
+        cursorOutline.style.top = outlineY + 'px';
+
+        requestAnimationFrame(animateOutline);
+      }
+      animateOutline();
+
+      // Hover effect for interactive elements
+      document.querySelectorAll('a, button').forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          cursorOutline.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+          cursorOutline.classList.remove('hover');
+        });
+      });
+
+      // Click ripple effect
+      document.addEventListener('click', () => {
+        cursorOutline.classList.add('click');
+        setTimeout(() => {
+          cursorOutline.classList.remove('click');
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
