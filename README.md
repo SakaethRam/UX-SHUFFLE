@@ -82,40 +82,6 @@ UX-SHUFFLE sits between them and handles the selection and transfer.
 
 ---
 
-# Current Collection
-
-The repository currently contains multiple UI/UX collections:
-
-```text
-UX-SHUFFLE/
-│
-├── Arkin-MetaLib/
-├── Arkin-X-Production/
-├── CAROUSEL-UX/
-├── Meta/
-├── Portfolio/
-│
-├── LICENSE
-└── README.md
-```
-
-Each top-level directory represents an independently distributable UI/UX collection.
-
-The CLI is designed to discover available directories dynamically, meaning new collections can be added without requiring the CLI interface itself to be rewritten.
-
-For example, adding:
-
-```text
-UX-SHUFFLE/
-├── ORBIT/
-├── CafeRacer/
-└── ...
-```
-
-automatically makes those directories available to the selection interface.
-
----
-
 # Why UX-SHUFFLE?
 
 Modern development often involves assembling interfaces from multiple sources:
@@ -152,30 +118,18 @@ Clone → Select → Shuffle → Build
 
 ---
 
-# Quick Start
+# Set-up of UX-SHUFFLE
 
-## 1. Clone the repository
+## 1. Clone the repository & Enter the repository
 
 ```bash
-git clone https://github.com/SakaethRam/UX-SHUFFLE.git
+git clone https://github.com/SakaethRam/UX-SHUFFLE.git && cd UX-SHUFFLE
 ```
 
-## 2. Enter the repository
+## 2. Install the CLI dependencies & Launch UX-SHUFFLE
 
 ```bash
-cd UX-SHUFFLE
-```
-
-## 3. Install the CLI dependencies
-
-```bash
-npm install
-```
-
-## 4. Launch UX-SHUFFLE
-
-```bash
-npm run setup
+npm install && npm run setup
 ```
 
 The interactive terminal interface will discover the available projects and allow you to select which ones you want to transfer.
@@ -224,36 +178,6 @@ COMPLETE
 The animation is not intended to simulate meaningless processing.
 
 Each stage corresponds to an actual operation performed by the CLI.
-
----
-
-# Project Selection
-
-After scanning the repository, UX-SHUFFLE presents the available collections.
-
-Example:
-
-```text
-UX-SHUFFLE / SELECT
-
-────────────────────────────────────────
-
-  ◉ Arkin-MetaLib
-  ◯ Arkin-X-Production
-  ◉ CAROUSEL-UX
-  ◯ Meta
-  ◉ Portfolio
-
-────────────────────────────────────────
-
-3 PROJECTS SELECTED
-
-↑ ↓ navigate
-SPACE select
-ENTER continue
-```
-
-Multiple projects can be selected during the same operation.
 
 ---
 
@@ -527,7 +451,7 @@ As the repository grows, the same model can be extended to finer-grained modules
 
 ---
 
-# Future Module Support
+# Module Support
 
 The current architecture can be extended beyond top-level projects.
 
@@ -602,7 +526,7 @@ Launch the full interactive setup workflow.
 
 ---
 
-# Example Workflow
+# Workflow Demonstration
 
 A complete workflow could eventually look like:
 
@@ -674,48 +598,29 @@ Portfolio         ━━━━━━━━━━━━━━━━━━━━ �
 
 UX-SHUFFLE follows a few principles.
 
-### 01 — Selection over extraction
+### 01 : Selection over extraction
 
 The user should not need to copy an entire repository just to obtain one interface.
 
-### 02 — Reuse over recreation
+### 02 : Reuse over recreation
 
 Previously built interface work should be easy to bring into a new project.
 
-### 03 — Distribution over duplication
+### 03 : Distribution over duplication
 
 The repository acts as a source of reusable interface systems.
 
-### 04 — CLI over ceremony
+### 04 : CLI over ceremony
 
 The workflow should remain fast enough to use from a terminal.
 
-### 05 — Visual feedback
+### 05 : Visual feedback
 
 Operations should communicate what is actually happening.
 
-### 06 — Non-destructive by default
+### 06 : Non-destructive by default
 
 The source collection should remain untouched after distribution.
-
----
-
-# Technology
-
-The CLI is designed around a lightweight Node.js environment.
-
-Core technologies:
-
-* **Node.js**
-* **JavaScript / TypeScript-compatible architecture**
-* **Filesystem APIs**
-* **Interactive terminal prompts**
-* **ANSI terminal rendering**
-* **Animated progress indicators**
-
-The filesystem layer performs the actual work.
-
-The terminal layer provides the UX.
 
 ---
 
@@ -892,57 +797,6 @@ git push
 ```
 
 Once added, the project can be discovered by the CLI's repository scanner.
-
----
-
-# Development
-
-Clone the repository:
-
-```bash
-git clone https://github.com/SakaethRam/UX-SHUFFLE.git
-cd UX-SHUFFLE
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the CLI locally:
-
-```bash
-npm run setup
-```
-
----
-
-# License
-
-See [`LICENSE`](./LICENSE) for the applicable license terms.
-
----
-
-# UX-SHUFFLE
-
-```text
-        SOURCE
-           │
-           ▼
-     ┌─────────────┐
-     │ UX-SHUFFLE  │
-     │             │
-     │   SELECT    │
-     │      ↓      │
-     │   SHUFFLE   │
-     │      ↓      │
-     │   TRANSFER  │
-     └──────┬──────┘
-            │
-            ▼
-          TARGET
-```
 
 ---
 
