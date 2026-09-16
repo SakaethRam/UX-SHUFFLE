@@ -59,29 +59,6 @@ followed by an interactive selection and transfer experience.
 
 ---
 
-# Core Idea
-
-```text
-              UX-SHUFFLE
-                   │
-        ┌──────────┼──────────┐
-        │          │          │
-        ▼          ▼          ▼
-     DISCOVER    SELECT     TRANSFER
-        │          │          │
-        └──────────┼──────────┘
-                   ▼
-             YOUR PROJECT
-```
-
-The repository is the **source**.
-
-Your local application is the **target**.
-
-UX-SHUFFLE sits between them and handles the selection and transfer.
-
----
-
 # Why UX-SHUFFLE?
 
 Modern development often involves assembling interfaces from multiple sources:
@@ -118,7 +95,7 @@ Clone → Select → Shuffle → Build
 
 ---
 
-# Set-up of UX-SHUFFLE
+# Setting Up UX-SHUFFLE
 
 ## 1. Clone the repository & Enter the repository
 
