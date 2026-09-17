@@ -8,26 +8,7 @@ UX-SHUFFLE is a developer-oriented UI/UX distribution repository designed to mak
 
 Instead of manually browsing a repository, copying folders, navigating between directories, and repeatedly moving UI assets around, UX-SHUFFLE provides an interactive command-line workflow for selecting the interface modules you need and transferring them directly into your project.
 
-```text
-                 UX-SHUFFLE
-
-          DESIGN SYSTEM DISTRIBUTION ENGINE
-
-                    SOURCE
-                       │
-                       ▼
-              ┌─────────────────┐
-              │   UX-SHUFFLE    │
-              │     ENGINE      │
-              └────────┬────────┘
-                       │
-                 SELECT + SHUFFLE
-                       │
-                       ▼
-                    TARGET
-
-             Your project. Your choice.
-```
+<img width="1800" height="1000" alt="ZREX SHUFFLE" src="https://github.com/user-attachments/assets/7cb04ad4-7919-4795-b41f-41be5a512908" />
 
 ---
 
